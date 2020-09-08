@@ -14,6 +14,7 @@ public class Aula05 {
 		
 		// As posições validas são do primeiro valor até o tamanho real do vetor
 		System.out.println(vetor.busca(2));
+		
 
 	}
 
