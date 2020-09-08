@@ -68,6 +68,7 @@ public class Vetor {
 		if(!(posicao >= 0 && posicao < tamanho)) {
 			
 			// è uma exception especial para argumentos invalidos, no caso de for pedido uma posição invalida no vetor
+			// O tamanho real é a ultima posição preenchida no vetor
 			throw new IllegalArgumentException("A posição informada é invalida");
 		}
 		
@@ -78,6 +79,28 @@ public class Vetor {
 	// Metodo para retornar o tamanho do vetor 
 	public int tamanho() {
 		return this.tamanho;
+		
+	}
+	
+	
+	
+	//Metodo para verificar se um elemento existe em um vetor
+	public int busca(String elemento) {
+		
+		//Algoritmo de busca sequência
+		for(int i = 0; i < this.tamanho; i++) {
+			
+			// o equals compara os elementos, mas e case sensitive, a função ignoreEqual não
+			// compara o elemento informado para ver se é igual a algum dentro do vetor
+			if(this.elementos[i].equals(elemento)) {
+				
+				return i;
+			}
+			
+		}
+		
+		return -1;
+		
 		
 	}
 	
