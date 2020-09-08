@@ -45,8 +45,10 @@ public class Vetor {
 		
 	}
 	*/
+
 	
-	// Método para preencher o vetor 
+	
+	// Método para preencher/adicionar dados ao vetor 
 	public boolean  adiciona(String elemento){
 		
 		if(this.tamanho < this.elementos.length){
@@ -60,6 +62,29 @@ public class Vetor {
 		return false; // caso não adicione
 		
 	}
+	
+	//Fazendo um OverLoarding, sobrecarregando o metodo adiciona, modificando a sua assinatura
+	//Esse metodo é para adicionar um valor em qualquer posição
+	 public boolean adiciona(int posicao, String elemento) {
+		 
+		 //Verificando se é uma posição valida ou não
+		 if(!(posicao >= 0 && posicao < tamanho)) {
+			 throw new IllegalArgumentException("Posição informada invalida");
+			 
+		 }
+		 // Movendo os elementos 
+		 for(int i = this.tamanho - 1; i >= posicao; i--) {
+			 this.elementos[i + 1] = this.elementos[i];
+		 }
+		 
+		 this.elementos[posicao] = elemento;
+		 this.tamanho++;
+		 
+		 
+		 return true;
+		 
+	 }
+
 	
 	//Metodo de busca
 	public String busca(int posicao) {
