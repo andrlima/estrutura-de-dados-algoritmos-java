@@ -1,0 +1,130 @@
+package com.leo.estruturaDeDados.vetor;
+
+import java.util.Arrays;
+
+public class Vetor {
+	
+	private String[] elementos;
+	private int tamanho;
+	
+	public Vetor(int capacidade) {
+		this.elementos = new String[capacidade];
+		this.tamanho = 0;
+	
+	}
+	
+	
+	// METODOS DE ADICIONAR ELEMENTOS NO VETOR
+	
+	/* Código não muito eficiente 
+	public void adiciona(String elemento) {
+		
+		for(int i = 0; i < this.elementos.length; i++) {
+			
+			if(this.elementos[i] == null) {
+				this.elementos[i] = elemento;
+				break;
+			}
+		}
+	}
+	*/
+	
+	
+	/*  Metodo com inteiro 
+	public void adiciona(String elemento) throws Exception {
+		
+		if(this.tamanho < this.elementos.length){
+			this.elementos[this.tamanho] = elemento;
+			this.tamanho++;
+			
+		}
+		else {
+			throw new Exception("Veotor cheio");
+			
+		}
+		
+	}
+	*/
+	
+	// Método para preencher o vetor 
+	public boolean  adiciona(String elemento){
+		
+		if(this.tamanho < this.elementos.length){
+			this.elementos[this.tamanho] = elemento;
+			this.tamanho++; // retorna a quantidade de elementos no vetor 
+			
+			return true; // para aducuibar 
+
+		}
+		
+		return false; // caso não adicione
+		
+	}
+	
+	//Metodo de busca
+	public String busca(int posicao) {
+		
+		//Negando todas as posições que não podem ser acessadas 
+		if(!(posicao >= 0 && posicao < tamanho)) {
+			
+			// è uma exception especial para argumentos invalidos, no caso de for pedido uma posição invalida no vetor
+			throw new IllegalArgumentException("A posição informada é invalida");
+		}
+		
+		return this.elementos[posicao];
+	}
+	
+	
+	// Metodo para retornar o tamanho do vetor 
+	public int tamanho() {
+		return this.tamanho;
+		
+	}
+	
+	
+	//Método para percorrer o vetor e só vai mostrar os espaço que contenha valores,
+	@Override
+	public String toString() {
+		
+		 //StringBuilder
+		StringBuilder stg = new StringBuilder();
+		stg.append("[");
+		
+		for(int i = 0; i < this.tamanho -1; i++) {
+			
+			stg.append(this.elementos[i]);
+			stg.append(", ");
+			
+		}
+		
+		if(this.tamanho > 0) {
+			stg.append(this.elementos[this.tamanho - 1]);
+		}
+		
+		stg.append("]");
+		
+		return stg.toString();
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
