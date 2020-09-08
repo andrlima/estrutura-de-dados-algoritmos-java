@@ -177,6 +177,26 @@ public class Vetor {
 	}
 	
 	
+	// Metodo remover uma possição do vetor
+	public void remove(int posicao) {
+		
+		// Verifica se o lavor informado é valido para o vetor
+		//Sempre trabalhar com o valor real do vetor, ou seja,a 
+		// é o ultimo elemento adicionado no vetor
+		if(!(posicao >= 0 && posicao < tamanho)) {
+			throw new IllegalArgumentException("Posição invalida");
+			
+		}
+		
+		//
+		for(int i = posicao; i < this.tamanho - 1; i++) {
+			this.elementos[i] = this.elementos[i + 1];
+			
+		}
+		this.tamanho--;
+		
+	}
+	
 	
 	
 	
