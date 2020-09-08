@@ -80,8 +80,8 @@ public class VetorObjetos {
 		//aumenta o vetor se estiver cheio
 		this.aumentandoVetor();
 		
-		//Movendo os elementos, sé existir outros elementos do lado direito.
-		//No caso, move todos os elementos da direita do valor inserido.
+		//Movendo os elementos a direita do valor inserido..
+		//No caso, move todos os elemento  uma posição para a direita do valor inserido.
 		for(int i = this.tamanho - 1; i >= posicao; i--) {
 			this.elementos[i + 1] = this.elementos[i];
 			
@@ -116,7 +116,7 @@ public class VetorObjetos {
 	}
 	
 	// MÉTODO DE BUSCA 1
-	// Esse método retorna o valor da posição informada
+	// Esse método retorna o VALOR da posição informada
 	public Object buscar(int posicao) {
 		
 		//Nega todas às posições que não possue dados, ou seja, não acessa as posições vazia no vetor, somente as que posuem valores nela.
@@ -135,13 +135,16 @@ public class VetorObjetos {
 	}
 	
 	// MÉTODO DE BUSCA 2
+	// Esse método retorna a POSIÇÂO do valor informado
+	// Método que busca um valor no vetor, ou seja, ele verifica se o valor existe.
 	public int buscar(Object elemento) {
 		
+		// Algoritmo de busca sequêncial
 		for(int i = 0; i < this.tamanho; i++) {
 			
 			if(this.elementos[i].equals(elemento)) {
-				
-				return 1;
+				 
+				return i;
 			}
 			
 		}
@@ -149,5 +152,38 @@ public class VetorObjetos {
 		return -1;
 		
 	}
+	
+	// MÉTODO REMOVER
+	// Esse método remove uma posição do vetor
+	public void remover(int posicao) {
+		
+		
+		// Verifica se o valor informado é valido
+		// O IllegalArgumentException sempre trabalha com o valor real, ou seja, o ultimo elemento adicionado no vetor.
+		if(!(posicao >= 0 && posicao < tamanho)) {
+			throw new IllegalArgumentException("A posição informada é invalida");
+			
+		}
+		
+		// Move todos os elementos para a esquerda.
+		// Quando remove um elemento, os elementos desloca um possição para a esqueda.
+		// Assim não deixando lacunas no vetor
+		for(int i = posicao; i < this.tamanho - 1; i++) {
+			this.elementos[i] = this.elementos[i + 1];
+			
+		}
+		
+		// Decrementa o vetor
+		this.tamanho--;
+		
+	}
+	
+	// MÉTODO TAMANHO DO VETOR
+	// Retorna o tamanho do vetor
+	public int tamanho() {
+		
+		return this.tamanho;
+	}
+	
 
 }

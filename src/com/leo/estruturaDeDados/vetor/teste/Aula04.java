@@ -16,7 +16,7 @@ public class Aula04 {
 		
 		// imprimindo o tamanho do vetor
 		System.out.println(vetor.toString());
-		
+		 
 		
 	}
 

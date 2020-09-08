@@ -12,7 +12,7 @@ public class Aula09 {
 		vetor.adiciona("B");
 		vetor.adiciona("C");
 		vetor.adiciona("D");
-		vetor.adiciona("E");
+		vetor.adiciona("E"); 
 		
 		System.out.println(vetor);
 		
@@ -36,7 +36,6 @@ public class Aula09 {
 		}
 		
 		System.out.println(vetor);
-		
 		
 	}
 
