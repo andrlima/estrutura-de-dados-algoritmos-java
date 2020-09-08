@@ -5,19 +5,14 @@ import com.leo.estruturaDeDados.vetor.VetorObjeto;
 public class Aula10 {
 
 	public static void main(String[] args) {
-		
+	
 		VetorObjeto vetor = new VetorObjeto(6);
 		
-		vetor.adiciona("A");
-		vetor.adiciona("B");
-		vetor.adiciona("C");
-		vetor.adiciona("D");
-		vetor.adiciona("E");
-		vetor.adiciona("F");
+		vetor.adicionar("A");
+		vetor.adicionar("B");
+		vetor.adicionar("C");
 		
 		System.out.println(vetor);
-		
-		
 
 	}
 
