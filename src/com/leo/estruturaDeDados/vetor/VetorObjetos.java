@@ -1,13 +1,11 @@
 package com.leo.estruturaDeDados.vetor;
 
-import java.util.Arrays;
-
 public class VetorObjetos {
 	
 	private Object[] elementos;
 	private int tamanho;
 	
-	//MÉTODO CONSTRUTOR
+	//MÉTODO CONSTRUTOR com os parâmetros
 	public VetorObjetos(int capacidade) {
 		
 		this.elementos = new Object[capacidade];
